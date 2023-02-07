@@ -58,15 +58,29 @@ public class Movement : MonoBehaviour
             _moveDirection < 0 ? (_endPoint.position - transform.position).normalized : Vector3.zero;
         _direction *= _sensetive;
 
+        CheckRotation();
+
         //To press to the grater
         if (!_inGrater)
-            _rb.AddForce(Vector3.left * 1000 * Time.deltaTime, ForceMode.Acceleration);
+            _rb.AddForce(Vector3.left * 1000 * Time.fixedDeltaTime, ForceMode.Acceleration);
 
         //Moving
         if (_inGrater)
-            _rb.AddForce(_direction * _speed * Time.fixedDeltaTime, ForceMode.Acceleration);
+        {
+            //Checking if object too high/low
+            if (transform.position.y >= _startPoint.position.y)
+            {
+                if(_moveDirection > 0)
+                    return;
+            }
+            else if (transform.position.y <= _endPoint.position.y)
+            {
+                if (_moveDirection < 0)
+                    return;
+            }
 
-        CheckRotation();
+            _rb.AddForce(_direction * _speed * Time.fixedDeltaTime, ForceMode.Acceleration);
+        }
     }
 
     void CheckRotation()

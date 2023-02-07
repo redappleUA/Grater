@@ -8,9 +8,18 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: RECT_Steel
-  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_Shader: {fileID: 4800000, guid: 7cd5de0b884b14f88ab763ef465e1799, type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - TCP2_DISABLE_WRAPPED_LIGHT
+  - TCP2_SPEC_TOON
+  - TCP2_STYLIZED_FRESNEL
+  - TCP2_UV_NORMALS_FULL
+  - _ALPHAPREMULTIPLY_ON
+  - _CELPRIMARYMODE_SINGLE
+  - _SEGMENTED_ON
+  - _TEXTUREBLENDINGMODE_MULTIPLY
+  - _UNITYSHADOWMODE_NONE
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -21,6 +30,14 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CelCurveTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _CelStepTexture:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -40,11 +57,19 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _EmmisTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -56,25 +81,133 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Ramp:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _AlphaClip: 0
+    - _AmbientCol: 0.084
+    - _Blend: 0
     - _BumpScale: 1
+    - _CelExtraEnabled: 0
+    - _CelNumSteps: 3
+    - _CelPrimaryMode: 1
+    - _Clipped: 0
+    - _ColBright: 0
+    - _ColIntense: 1
+    - _Cull: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DstBlend: 0
+    - _DstBlend: 10
+    - _EnableOutline: 0
+    - _FlatRimEdgeSmoothness: 0.5
+    - _FlatRimLightAlign: 0
+    - _FlatRimSize: 0.5
+    - _FlatSpecularEdgeSmoothness: 0
+    - _FlatSpecularSize: 0.1
+    - _Flatness: 1
+    - _FlatnessExtra: 1
+    - _FresnelBrightness: 0
+    - _FresnelPower: 0
+    - _FresnelShadowDropoff: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
+    - _GradientAngle: 0
+    - _GradientCenterX: 0
+    - _GradientCenterY: 0
+    - _GradientEnabled: 0
+    - _GradientSize: 10
+    - _HighIntensity: 1.5
+    - _LightContribution: 0
+    - _LightScalar: 1.65
+    - _LightmapDirectionPitch: 0
+    - _LightmapDirectionYaw: 0
+    - _LowIntensity: 1
+    - _Lumin: 0
+    - _MaxLight: 1
     - _Metallic: 0.82
-    - _Mode: 0
+    - _MinLight: 0
+    - _Mode: 3
+    - _NormalsSource: 0
+    - _NormalsUVType: 0
     - _OcclusionStrength: 1
+    - _Offset: 0.21
+    - _Offset1: 0
+    - _Offset2: 0
+    - _OtlWidth: 1
+    - _Outline: 1
+    - _OutlineSize: 10
+    - _OverrideLightmapDir: 0
     - _Parallax: 0.02
+    - _QueueOffset: 0
+    - _RampLevels: 7.4
+    - _RampSmooth: 0.496
+    - _RampSmoothAdd: 0.712
+    - _RampThreshold: 0
+    - _RimAlpha: 0
+    - _RimDropOff: 0
+    - _RimEnabled: 0
+    - _RimMax: 0.662
+    - _RimMin: 0.5
+    - _RimPower: 0
+    - _RimStrength: 0
+    - _Segmented: 1
+    - _SelfShadingSize: 0.269
+    - _SelfShadingSizeExtra: 0.6
+    - _ShadowEdgeSize: 0.059
+    - _ShadowEdgeSizeExtra: 0.05
+    - _ShnIntense: 0
+    - _ShnOverlap: 0
+    - _ShnRange: 0.15
+    - _ShnSmooth: 0
     - _SmoothnessTextureChannel: 0
+    - _SpecBlend: 1
+    - _SpecSmooth: 0.198
+    - _SpecularEnabled: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _Steps: 6.5
+    - _StpSmooth: 0
+    - _Surface: 0
+    - _TCP2_DISABLE_WRAPPED_LIGHT: 1
+    - _TCP2_OUTLINE_CONST_SIZE: 0
+    - _TCP2_OUTLINE_TEXTURED: 0
+    - _TCP2_RAMPTEXT: 0
+    - _TCP2_SPEC_TOON: 1
+    - _TCP2_STYLIZED_FRESNEL: 1
+    - _TCP2_ZSMOOTH_ON: 0
+    - _TexLod: 5
+    - _TextureBlendingMode: 0
+    - _TextureImpact: 1
     - _UVSec: 0
-    - _ZWrite: 1
+    - _UnityShadowMode: 0
+    - _UnityShadowPower: 0.2
+    - _UnityShadowSharpness: 1
+    - _VertexColorsEnabled: 0
+    - _ZSmooth: -0.5
+    - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 0.63235295, g: 0.63235295, b: 0.63235295, a: 1}
+    - _Color: {r: 0.254717, g: 0.25111252, b: 0.25111252, a: 1}
+    - _ColorDim: {r: 0.5754717, g: 0.5238964, b: 0.5238964, a: 1}
+    - _ColorDimCurve: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
+    - _ColorDimExtra: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
+    - _ColorDimSteps: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
+    - _ColorGradient: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FlatRimColor: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
+    - _FlatSpecularColor: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}
+    - _FresnelColor: {r: 1, g: 1, b: 1, a: 1}
+    - _HColor: {r: 1, g: 1, b: 1, a: 1}
+    - _HighColor: {r: 0.6792453, g: 0.44535422, b: 0.44535422, a: 1}
+    - _LightmapDirection: {r: 0, g: 1, b: 0, a: 0}
+    - _LowColor: {r: 1, g: 1, b: 1, a: 1}
+    - _OtlColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SColor: {r: 0.6698113, g: 0.6540139, b: 0.6540139, a: 1}
+    - _ShnColor: {r: 1, g: 1, b: 0, a: 1}
+    - _UnityShadowColor: {r: 0.85023, g: 0.85034, b: 0.8504499, a: 0.85056}
   m_BuildTextureStacks: []
