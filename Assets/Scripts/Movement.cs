@@ -62,7 +62,7 @@ public class Movement : MonoBehaviour
 
         //To press to the grater
         if (!_inGrater)
-            _rb.AddForce(Vector3.left * 1000 * Time.fixedDeltaTime, ForceMode.Acceleration);
+            _rb.AddForce(Vector3.forward * 1000 * Time.fixedDeltaTime, ForceMode.Acceleration);
 
         //Moving
         if (_inGrater)

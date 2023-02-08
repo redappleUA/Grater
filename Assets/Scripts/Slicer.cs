@@ -6,6 +6,7 @@ using EzySlice;
 public class Slicer : MonoBehaviour
 {
     [SerializeField] GameObject _rubbedObjectPrefab;
+    [SerializeField, Range(0f, 15f)] float _timeToDestroy = 5;
     [SerializeField] Transform _spawningPoint;
     [SerializeField] PhysicMaterial _material;
     [SerializeField] Material _crossSectionMaterial;
@@ -50,8 +51,7 @@ public class Slicer : MonoBehaviour
                 top.tag = "Sliceable";
                 AddHullComponents(top);
                 var rb = top.GetComponent<Rigidbody>();
-                rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionZ; //| RigidbodyConstraints.FreezePositionY;
-                rb.useGravity = false;
+                rb.constraints = RigidbodyConstraints.FreezeRotation;
 
                 Destroy(bottom);
                 Destroy(cutObject);
@@ -109,8 +109,15 @@ public class Slicer : MonoBehaviour
                 Quaternion.Euler(new Vector3(Random.Range(0, 180), Random.Range(0, 180), Random.Range(0, 180))));
 
             go.GetComponent<MeshRenderer>().material = material;
+            StartCoroutine(DestroyAfterTime(go, _timeToDestroy));
 
             yield return new WaitForSeconds(Random.value / 2);
         }
+    }
+
+    IEnumerator DestroyAfterTime(GameObject goToDestroy, float time)
+    {
+        yield return new WaitForSeconds(time);
+        Destroy(goToDestroy);
     }
 }

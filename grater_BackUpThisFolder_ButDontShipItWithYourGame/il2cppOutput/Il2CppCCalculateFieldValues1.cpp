@@ -5814,18 +5814,31 @@ struct QualityPreset_t2D72065A498570E1D28E4BC2A6F1A2B2F3E37683  : public Runtime
 	int32_t ___downsampling_2;
 };
 
-// Slicer/<SpawningRubbedObjects>d__16
-struct U3CSpawningRubbedObjectsU3Ed__16_t191C0D94C5312C38677DFFEE58871D9744A1A2B7  : public RuntimeObject
+// Slicer/<DestroyAfterTime>d__18
+struct U3CDestroyAfterTimeU3Ed__18_t1D0587C261BB3BE39D047FAAB73FF1FF85E6D6AF  : public RuntimeObject
 {
-	// System.Int32 Slicer/<SpawningRubbedObjects>d__16::<>1__state
+	// System.Int32 Slicer/<DestroyAfterTime>d__18::<>1__state
 	int32_t ___U3CU3E1__state_0;
-	// System.Object Slicer/<SpawningRubbedObjects>d__16::<>2__current
+	// System.Object Slicer/<DestroyAfterTime>d__18::<>2__current
 	RuntimeObject* ___U3CU3E2__current_1;
-	// Slicer Slicer/<SpawningRubbedObjects>d__16::<>4__this
+	// System.Single Slicer/<DestroyAfterTime>d__18::time
+	float ___time_2;
+	// UnityEngine.GameObject Slicer/<DestroyAfterTime>d__18::goToDestroy
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___goToDestroy_3;
+};
+
+// Slicer/<SpawningRubbedObjects>d__17
+struct U3CSpawningRubbedObjectsU3Ed__17_tB9004A35660DFF7C060DE863D442EB41B5814795  : public RuntimeObject
+{
+	// System.Int32 Slicer/<SpawningRubbedObjects>d__17::<>1__state
+	int32_t ___U3CU3E1__state_0;
+	// System.Object Slicer/<SpawningRubbedObjects>d__17::<>2__current
+	RuntimeObject* ___U3CU3E2__current_1;
+	// Slicer Slicer/<SpawningRubbedObjects>d__17::<>4__this
 	Slicer_tE39014ED032EF413883650E4D3BFAA9022065B99* ___U3CU3E4__this_2;
-	// UnityEngine.Material Slicer/<SpawningRubbedObjects>d__16::<material>5__2
+	// UnityEngine.Material Slicer/<SpawningRubbedObjects>d__17::<material>5__2
 	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ___U3CmaterialU3E5__2_3;
-	// System.Int32 Slicer/<SpawningRubbedObjects>d__16::<i>5__3
+	// System.Int32 Slicer/<SpawningRubbedObjects>d__17::<i>5__3
 	int32_t ___U3CiU3E5__3_4;
 };
 
@@ -22205,28 +22218,30 @@ struct Slicer_tE39014ED032EF413883650E4D3BFAA9022065B99  : public MonoBehaviour_
 {
 	// UnityEngine.GameObject Slicer::_rubbedObjectPrefab
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ____rubbedObjectPrefab_4;
+	// System.Single Slicer::_timeToDestroy
+	float ____timeToDestroy_5;
 	// UnityEngine.Transform Slicer::_spawningPoint
-	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ____spawningPoint_5;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ____spawningPoint_6;
 	// UnityEngine.PhysicMaterial Slicer::_material
-	PhysicMaterial_t4ECED34E04BB2148333467208361A5FBFDCD7131* ____material_6;
+	PhysicMaterial_t4ECED34E04BB2148333467208361A5FBFDCD7131* ____material_7;
 	// UnityEngine.Material Slicer::_crossSectionMaterial
-	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ____crossSectionMaterial_7;
+	Material_t18053F08F347D0DCA5E1140EC7EC4533DD8A14E3* ____crossSectionMaterial_8;
 	// UnityEngine.ParticleSystem Slicer::_cutEffectsPrefab
-	ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* ____cutEffectsPrefab_8;
+	ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* ____cutEffectsPrefab_9;
 	// System.Single Slicer::_sizeOfCutEffects
-	float ____sizeOfCutEffects_9;
+	float ____sizeOfCutEffects_10;
 	// UnityEngine.Transform Slicer::_cutPlane
-	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ____cutPlane_10;
+	Transform_tB27202C6F4E36D225EE28A13E4D662BF99785DB1* ____cutPlane_11;
 	// UnityEngine.GameObject Slicer::_sliceObject
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ____sliceObject_11;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ____sliceObject_12;
 	// UnityEngine.ParticleSystem Slicer::_cutEffects
-	ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* ____cutEffects_12;
+	ParticleSystem_tB19986EE308BD63D36FB6025EEEAFBEDB97C67C1* ____cutEffects_13;
 };
 
 struct Slicer_tE39014ED032EF413883650E4D3BFAA9022065B99_StaticFields
 {
 	// System.Boolean Slicer::_objectInTrigger
-	bool ____objectInTrigger_13;
+	bool ____objectInTrigger_14;
 };
 
 // Spawner
@@ -27315,15 +27330,18 @@ IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4548[3] =
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4549[8] = 
 {
 	static_cast<int32_t>(offsetof(Utility_t8BCC393462C6270211734BE47CF5350F05EC97AD_StaticFields, ___GraphicsResourcesRecreate_0)),static_cast<int32_t>(offsetof(Utility_t8BCC393462C6270211734BE47CF5350F05EC97AD_StaticFields, ___EngineUpdate_1)),static_cast<int32_t>(offsetof(Utility_t8BCC393462C6270211734BE47CF5350F05EC97AD_StaticFields, ___FlushPendingResources_2)),static_cast<int32_t>(offsetof(Utility_t8BCC393462C6270211734BE47CF5350F05EC97AD_StaticFields, ___RegisterIntermediateRenderers_3)),static_cast<int32_t>(offsetof(Utility_t8BCC393462C6270211734BE47CF5350F05EC97AD_StaticFields, ___RenderNodeAdd_4)),static_cast<int32_t>(offsetof(Utility_t8BCC393462C6270211734BE47CF5350F05EC97AD_StaticFields, ___RenderNodeExecute_5)),static_cast<int32_t>(offsetof(Utility_t8BCC393462C6270211734BE47CF5350F05EC97AD_StaticFields, ___RenderNodeCleanup_6)),static_cast<int32_t>(offsetof(Utility_t8BCC393462C6270211734BE47CF5350F05EC97AD_StaticFields, ___s_MarkerRaiseEngineUpdate_7)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4552[12] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4551[12] = 
 {
 	static_cast<int32_t>(offsetof(Movement_t7ED030E814A2C7E091389CFDABC85C6995DD35E7, ____speed_4)),static_cast<int32_t>(offsetof(Movement_t7ED030E814A2C7E091389CFDABC85C6995DD35E7, ____sensetive_5)),static_cast<int32_t>(offsetof(Movement_t7ED030E814A2C7E091389CFDABC85C6995DD35E7, ____extentsToDestroy_6)),static_cast<int32_t>(offsetof(Movement_t7ED030E814A2C7E091389CFDABC85C6995DD35E7, ____spawner_7)),static_cast<int32_t>(offsetof(Movement_t7ED030E814A2C7E091389CFDABC85C6995DD35E7, ____startPoint_8)),static_cast<int32_t>(offsetof(Movement_t7ED030E814A2C7E091389CFDABC85C6995DD35E7, ____endPoint_9)),static_cast<int32_t>(offsetof(Movement_t7ED030E814A2C7E091389CFDABC85C6995DD35E7, ____rb_10)),static_cast<int32_t>(offsetof(Movement_t7ED030E814A2C7E091389CFDABC85C6995DD35E7, ____graterNormal_11)),static_cast<int32_t>(offsetof(Movement_t7ED030E814A2C7E091389CFDABC85C6995DD35E7, ____inGrater_12)),static_cast<int32_t>(offsetof(Movement_t7ED030E814A2C7E091389CFDABC85C6995DD35E7, ____startPosition_13)),static_cast<int32_t>(offsetof(Movement_t7ED030E814A2C7E091389CFDABC85C6995DD35E7, ____direction_14)),static_cast<int32_t>(offsetof(Movement_t7ED030E814A2C7E091389CFDABC85C6995DD35E7, ____moveDirection_15)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4553[5] = 
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4552[5] = 
 {
-	static_cast<int32_t>(offsetof(U3CSpawningRubbedObjectsU3Ed__16_t191C0D94C5312C38677DFFEE58871D9744A1A2B7, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CSpawningRubbedObjectsU3Ed__16_t191C0D94C5312C38677DFFEE58871D9744A1A2B7, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CSpawningRubbedObjectsU3Ed__16_t191C0D94C5312C38677DFFEE58871D9744A1A2B7, ___U3CU3E4__this_2)),static_cast<int32_t>(offsetof(U3CSpawningRubbedObjectsU3Ed__16_t191C0D94C5312C38677DFFEE58871D9744A1A2B7, ___U3CmaterialU3E5__2_3)),static_cast<int32_t>(offsetof(U3CSpawningRubbedObjectsU3Ed__16_t191C0D94C5312C38677DFFEE58871D9744A1A2B7, ___U3CiU3E5__3_4)),};
-IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4554[10] = 
+	static_cast<int32_t>(offsetof(U3CSpawningRubbedObjectsU3Ed__17_tB9004A35660DFF7C060DE863D442EB41B5814795, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CSpawningRubbedObjectsU3Ed__17_tB9004A35660DFF7C060DE863D442EB41B5814795, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CSpawningRubbedObjectsU3Ed__17_tB9004A35660DFF7C060DE863D442EB41B5814795, ___U3CU3E4__this_2)),static_cast<int32_t>(offsetof(U3CSpawningRubbedObjectsU3Ed__17_tB9004A35660DFF7C060DE863D442EB41B5814795, ___U3CmaterialU3E5__2_3)),static_cast<int32_t>(offsetof(U3CSpawningRubbedObjectsU3Ed__17_tB9004A35660DFF7C060DE863D442EB41B5814795, ___U3CiU3E5__3_4)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4553[4] = 
 {
-	static_cast<int32_t>(offsetof(Slicer_tE39014ED032EF413883650E4D3BFAA9022065B99, ____rubbedObjectPrefab_4)),static_cast<int32_t>(offsetof(Slicer_tE39014ED032EF413883650E4D3BFAA9022065B99, ____spawningPoint_5)),static_cast<int32_t>(offsetof(Slicer_tE39014ED032EF413883650E4D3BFAA9022065B99, ____material_6)),static_cast<int32_t>(offsetof(Slicer_tE39014ED032EF413883650E4D3BFAA9022065B99, ____crossSectionMaterial_7)),static_cast<int32_t>(offsetof(Slicer_tE39014ED032EF413883650E4D3BFAA9022065B99, ____cutEffectsPrefab_8)),static_cast<int32_t>(offsetof(Slicer_tE39014ED032EF413883650E4D3BFAA9022065B99, ____sizeOfCutEffects_9)),static_cast<int32_t>(offsetof(Slicer_tE39014ED032EF413883650E4D3BFAA9022065B99, ____cutPlane_10)),static_cast<int32_t>(offsetof(Slicer_tE39014ED032EF413883650E4D3BFAA9022065B99, ____sliceObject_11)),static_cast<int32_t>(offsetof(Slicer_tE39014ED032EF413883650E4D3BFAA9022065B99, ____cutEffects_12)),static_cast<int32_t>(offsetof(Slicer_tE39014ED032EF413883650E4D3BFAA9022065B99_StaticFields, ____objectInTrigger_13)),};
+	static_cast<int32_t>(offsetof(U3CDestroyAfterTimeU3Ed__18_t1D0587C261BB3BE39D047FAAB73FF1FF85E6D6AF, ___U3CU3E1__state_0)),static_cast<int32_t>(offsetof(U3CDestroyAfterTimeU3Ed__18_t1D0587C261BB3BE39D047FAAB73FF1FF85E6D6AF, ___U3CU3E2__current_1)),static_cast<int32_t>(offsetof(U3CDestroyAfterTimeU3Ed__18_t1D0587C261BB3BE39D047FAAB73FF1FF85E6D6AF, ___time_2)),static_cast<int32_t>(offsetof(U3CDestroyAfterTimeU3Ed__18_t1D0587C261BB3BE39D047FAAB73FF1FF85E6D6AF, ___goToDestroy_3)),};
+IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4554[11] = 
+{
+	static_cast<int32_t>(offsetof(Slicer_tE39014ED032EF413883650E4D3BFAA9022065B99, ____rubbedObjectPrefab_4)),static_cast<int32_t>(offsetof(Slicer_tE39014ED032EF413883650E4D3BFAA9022065B99, ____timeToDestroy_5)),static_cast<int32_t>(offsetof(Slicer_tE39014ED032EF413883650E4D3BFAA9022065B99, ____spawningPoint_6)),static_cast<int32_t>(offsetof(Slicer_tE39014ED032EF413883650E4D3BFAA9022065B99, ____material_7)),static_cast<int32_t>(offsetof(Slicer_tE39014ED032EF413883650E4D3BFAA9022065B99, ____crossSectionMaterial_8)),static_cast<int32_t>(offsetof(Slicer_tE39014ED032EF413883650E4D3BFAA9022065B99, ____cutEffectsPrefab_9)),static_cast<int32_t>(offsetof(Slicer_tE39014ED032EF413883650E4D3BFAA9022065B99, ____sizeOfCutEffects_10)),static_cast<int32_t>(offsetof(Slicer_tE39014ED032EF413883650E4D3BFAA9022065B99, ____cutPlane_11)),static_cast<int32_t>(offsetof(Slicer_tE39014ED032EF413883650E4D3BFAA9022065B99, ____sliceObject_12)),static_cast<int32_t>(offsetof(Slicer_tE39014ED032EF413883650E4D3BFAA9022065B99, ____cutEffects_13)),static_cast<int32_t>(offsetof(Slicer_tE39014ED032EF413883650E4D3BFAA9022065B99_StaticFields, ____objectInTrigger_14)),};
 IL2CPP_EXTERN_C const int32_t g_FieldOffsetTable4555[3] = 
 {
 	static_cast<int32_t>(offsetof(Spawner_t387EDFC7BADAEFFD3305FD31D1E8DDE8998FCDD7, ____vegetablesPrefabs_4)),static_cast<int32_t>(offsetof(Spawner_t387EDFC7BADAEFFD3305FD31D1E8DDE8998FCDD7, ____spawnPosition_5)),static_cast<int32_t>(offsetof(Spawner_t387EDFC7BADAEFFD3305FD31D1E8DDE8998FCDD7, ___U3CRotateU3Ek__BackingField_6)),};
