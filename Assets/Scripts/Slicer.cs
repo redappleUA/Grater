@@ -12,6 +12,7 @@ public class Slicer : MonoBehaviour
     [SerializeField] Material _crossSectionMaterial;
     [SerializeField] ParticleSystem _cutEffectsPrefab;
     [SerializeField, Range(0f, 15f)] float _sizeOfCutEffects = 8;
+    [SerializeField, Range(0f, 15f)] float _timeForWate = 1;
 
     private Transform _cutPlane;
     private GameObject _sliceObject;
@@ -25,15 +26,17 @@ public class Slicer : MonoBehaviour
         _cutEffects.transform.localScale = Vector3.one * _sizeOfCutEffects;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Sliceable") && !_objectInTrigger)
         {
+            Debug.Log("Wait");
             _objectInTrigger = true;
             _sliceObject = other.gameObject;
             Slice(other.gameObject);
             _cutEffects.Play();
         }
+        StartCoroutine(Wait(_timeForWate));
     }
 
     private void OnTriggerExit(Collider other) => _objectInTrigger = false;
@@ -51,7 +54,8 @@ public class Slicer : MonoBehaviour
                 top.tag = "Sliceable";
                 AddHullComponents(top);
                 var rb = top.GetComponent<Rigidbody>();
-                rb.constraints = RigidbodyConstraints.FreezeRotation;
+                rb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionX;
+                rb.interpolation = RigidbodyInterpolation.Interpolate;
 
                 Destroy(bottom);
                 Destroy(cutObject);
@@ -119,5 +123,10 @@ public class Slicer : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         Destroy(goToDestroy);
+    }
+
+    IEnumerator Wait(float timeForWate)
+    {
+        yield return new WaitForSeconds(timeForWate);
     }
 }
